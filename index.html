@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<div id="images"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+
+var ad_slot_id = "39";
+
+        $.get("http://adserver.vradx.com/sdk?p="+ad_slot_id, function(data, status){
+        	var ha = JSON.stringify(data);
+        	var jobj = JSON.parse(ha);
+        	var image_ulr = jobj[ad_slot_id].image_url;
+            $( "<img>" ).attr( "src", image_ulr).appendTo( "#images" );
+        });
+
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+<div style="position: relative; left: 0; top: 0;">
+  <img id="base" src="http://img.xiazaizhijia.com/uploads/2016/0712/20160712085115186.jpg" style="position: relative; top: 0; left: 0;"/>
+  <img id="ad" style="position: absolute; top: 210px; left: 190px;"/>
+</div>
+
+<div id="images"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript">
+var ad_slot_id = "71";
+        $.get("http://adserver.vradx.com/sdk?p="+ad_slot_id, function(data, status){
+        	var ha = JSON.stringify(data);
+        	var jobj = JSON.parse(ha);
+        	var image_ulr = jobj[ad_slot_id].image_url;
+        	document.getElementById("ad").src=image_ulr;
+        });
+</script>
+</head>
+<body>
+
+
+</body>
+</html>
